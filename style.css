@@ -19,3 +19,18 @@
     height:400px;
     background-color:red;
 }
+
+#numberButtons{
+    width: 90%;
+    height: 80%;
+    background-color:yellow;
+    display:grid;
+    grid-template-rows: 25% 25% 25% 25% ;
+    grid-template-columns: 114px 114px 114px;
+  
+}
+
+.nB{
+background-color:blue;
+
+}
