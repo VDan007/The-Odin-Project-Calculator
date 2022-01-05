@@ -1,0 +1,21 @@
+#calculator{
+    height: 600px;
+    width: 400px;
+    background-color: gray;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#display{
+    height: 150px;
+    width: 350px;
+    margin-top: 20px;
+    background-color:yellowgreen;
+    
+}
+
+#placeOFButtons{
+    width:380px;
+    height:400px;
+    background-color:red;
+}
