@@ -19,4 +19,13 @@ function operate (){
     
 }
 
-console.log(divide(6,2));
+const container = document.querySelector("#calculator");
+console.log(container);
+
+var aaa = document.querySelector(".nB");
+console.log(aaa);
+
+const buttons = Array.from(document.querySelectorAll(".nB"));
+console.log(buttons);
+
+
