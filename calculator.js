@@ -28,7 +28,6 @@ function showNumbers (){
     if(display.firstChild){display.removeChild(display.childNodes[0]);}
     const toShow = document.createElement("h1");
     toShow.textContent = numberA.join("");
-    
     display.appendChild(toShow);
 }
 
@@ -44,7 +43,7 @@ function fun (){
 }
 
 const buttons = Array.from(document.querySelectorAll(".nB"));
-console.log(buttons);
+
 
 buttons.forEach(x=>x.addEventListener("click",fun));
 
