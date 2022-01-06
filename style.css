@@ -23,7 +23,7 @@
     background-color:red;
     display:grid;
     gap:1px;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
     grid-template-columns:1fr 1fr 1fr 1fr;
    
     
@@ -48,4 +48,15 @@ align-items: center;
     justify-content: center;
     align-items: center;
     
+}
+
+#clear{
+    background-color:black;
+    color:red;
+    grid-column:1/5;
+
+}
+#clear:hover{
+    transform: scale(1.2);
+    background-color:pink;
 }
