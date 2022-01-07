@@ -1,7 +1,5 @@
 //Basic functions//////
-function add ( a,b){
-    return a+b;
-}
+
 
 function subtract (a,b){
     return a-b;
@@ -22,13 +20,15 @@ function operate (){
 ////////////
 
 
-const display = document.querySelector("#display");
+const display1 = document.querySelector("#display1");
+const display2 = document.querySelector("#display2");
+const display3 = document.querySelector("#display3");
 
 function showNumbers (){
-    if(display.firstChild){display.removeChild(display.childNodes[0]);}
+    if(display1.firstChild){display1.removeChild(display1.childNodes[0]);}
     const toShow = document.createElement("h1");
     toShow.textContent = numberA.join("");
-    display.appendChild(toShow);
+    display1.appendChild(toShow);
 }
 
 
@@ -43,7 +43,14 @@ function fun (){
 }
 
 const buttons = Array.from(document.querySelectorAll(".nB"));
-
-
 buttons.forEach(x=>x.addEventListener("click",fun));
 
+const   addBtn = document.querySelector(".addBtn");
+addBtn.addEventListener("click",add);
+
+function add (){
+    const plus = document.createElement("h1");
+    plus.textContent ="+";
+    display2.appendChild(plus);
+       // return a+b;
+    }
