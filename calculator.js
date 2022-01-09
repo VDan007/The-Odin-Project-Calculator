@@ -77,12 +77,7 @@ function fun2 (){
     showNumbers2();
 }
 
-function equal (){
-    console.log(
-        parseFloat(numberA.join(""))+parseFloat(numberB.join(""))
-    );
 
-}
 
 
 function con(){console.log("works");}
@@ -93,7 +88,16 @@ function addPressed(){
     display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+    addBtn.removeEventListener("click",addPressed);
+    addBtn.addEventListener("click",addPressedAgain);
+
 }
+
+function addPressedAgain(){
+operate();
+numberB = [];
+}
+
 function subtractPressed(){
     whatToDo.push("-");
     h1.textContent ="-";
@@ -118,10 +122,7 @@ function dividePressed(){
     buttons.forEach(x=>x.addEventListener("click",fun2));
 }
 
-function operatorPressedBefore(){
-    const operatorBtns = Array.from(document.querySelectorAll(".operator"));
-    operatorBtns.forEach();
-}
+
 
 function vipe(){
     display1.removeChild(display1.childNodes[0]);
