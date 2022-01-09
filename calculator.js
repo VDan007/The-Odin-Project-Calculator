@@ -125,6 +125,10 @@ function vipe(){
     display3.removeChild(display3.childNodes[0]);
 }
 
+function reload(){
+    window.location.reload();
+}
+
 const buttons = Array.from(document.querySelectorAll(".nB"));
 buttons.forEach(x=>x.addEventListener("click",fun));
 
@@ -143,7 +147,8 @@ divideBtn.addEventListener("click",dividePressed);
 const equalBtn = document.querySelector(".equal");
 equalBtn.addEventListener("click",operate);
 
-
+const clearBtn = document.querySelector("#clear");
+clearBtn.addEventListener("click",reload);
 
 const h1 = document.createElement("h1");
 
