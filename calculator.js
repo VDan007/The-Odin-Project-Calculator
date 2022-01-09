@@ -1,6 +1,9 @@
 //Basic functions//////
 function add (a,b){
-    return a+b;
+        vipe();
+      h1.textContent =  parseFloat(a.join("")) + parseFloat(b.join(""));
+    display1.append(h1);
+
     }
 
 function subtract (a,b){
@@ -16,7 +19,9 @@ function divide(a,b){
 }
 
 function operate (){
-    
+    if(whatToDo =="+"){
+        add(numberA,numberB);
+    }
 }
 
 ////////////
@@ -68,9 +73,15 @@ function equal (){
 function addPressed(){
     whatToDo.push("+");
     h1.textContent ="+";
-    operatorDisplay.append(h1);
+    display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+}
+
+function vipe(){
+    display1.removeChild(display1.childNodes[0]);
+    display2.removeChild(display2.childNodes[0]);
+    display3.removeChild(display3.childNodes[0]);
 }
 
 const buttons = Array.from(document.querySelectorAll(".nB"));
@@ -80,9 +91,9 @@ const   addBtn = document.querySelector(".addBtn");
 addBtn.addEventListener("click",addPressed);
 
 const equalBtn = document.querySelector(".equal");
-equalBtn.addEventListener("click",equal);
+equalBtn.addEventListener("click",operate);
 
-const operatorDisplay = document.querySelector("#display2");
+
 
 const h1 = document.createElement("h1");
 
