@@ -7,20 +7,35 @@ function add (a,b){
     }
 
 function subtract (a,b){
-    return a-b;
+    vipe();
+      h1.textContent =  parseFloat(a.join("")) - parseFloat(b.join(""));
+    display1.append(h1);
 }
 
 function multiply (a,b){
-    return a*b;
+    vipe();
+      h1.textContent =  parseFloat(a.join("")) * parseFloat(b.join(""));
+    display1.append(h1);
 }
 
 function divide(a,b){
-    return a/b;
+    vipe();
+      h1.textContent =  parseFloat(a.join("")) / parseFloat(b.join(""));
+    display1.append(h1);
 }
 
 function operate (){
     if(whatToDo =="+"){
         add(numberA,numberB);
+    }
+    else if(whatToDo=="-"){
+        subtract(numberA,numberB);
+    }
+    else if(whatToDo=="*"){
+        multiply(numberA,numberB);
+    }
+    else if(whatToDo=="/"){
+        divide(numberA,numberB);
     }
 }
 
@@ -70,6 +85,8 @@ function equal (){
 }
 
 
+function con(){console.log("works");}
+
 function addPressed(){
     whatToDo.push("+");
     h1.textContent ="+";
@@ -77,6 +94,30 @@ function addPressed(){
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
 }
+function subtractPressed(){
+    whatToDo.push("-");
+    h1.textContent ="-";
+    display2.append(h1);
+    buttons.forEach(x=>x.removeEventListener("click",fun));
+    buttons.forEach(x=>x.addEventListener("click",fun2));
+}
+
+function multiplyPressed(){
+    whatToDo.push("*");
+    h1.textContent ="*";
+    display2.append(h1);
+    buttons.forEach(x=>x.removeEventListener("click",fun));
+    buttons.forEach(x=>x.addEventListener("click",fun2));
+}
+
+function dividePressed(){
+    whatToDo.push("/");
+    h1.textContent ="/";
+    display2.append(h1);
+    buttons.forEach(x=>x.removeEventListener("click",fun));
+    buttons.forEach(x=>x.addEventListener("click",fun2));
+}
+
 
 function vipe(){
     display1.removeChild(display1.childNodes[0]);
@@ -89,6 +130,15 @@ buttons.forEach(x=>x.addEventListener("click",fun));
 
 const   addBtn = document.querySelector(".addBtn");
 addBtn.addEventListener("click",addPressed);
+
+const   subtractBtn = document.querySelector(".subtractBtn");
+subtractBtn.addEventListener("click",subtractPressed);
+
+const multiplyBtn =document.querySelector(".multiplyBtn");
+multiplyBtn.addEventListener("click",multiplyPressed);
+
+const divideBtn = document.querySelector(".divideBtn");
+divideBtn.addEventListener("click",dividePressed);
 
 const equalBtn = document.querySelector(".equal");
 equalBtn.addEventListener("click",operate);
