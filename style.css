@@ -80,5 +80,6 @@ align-items: center;
 }
 #clear:hover{
     transform: scale(1.2);
-    background-color:pink;
+    background-color:red;
+    color:black;
 }

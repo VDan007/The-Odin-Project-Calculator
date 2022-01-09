@@ -118,6 +118,10 @@ function dividePressed(){
     buttons.forEach(x=>x.addEventListener("click",fun2));
 }
 
+function operatorPressedBefore(){
+    const operatorBtns = Array.from(document.querySelectorAll(".operator"));
+    operatorBtns.forEach();
+}
 
 function vipe(){
     display1.removeChild(display1.childNodes[0]);
