@@ -1,5 +1,7 @@
 //Basic functions//////
-
+function add (a,b){
+    return a+b;
+    }
 
 function subtract (a,b){
     return a-b;
@@ -39,7 +41,7 @@ function showNumbers2 (){
     display3.appendChild(toShow);
 }
 
-
+var whatToDo = [];
 
 var numberB = [];
 
@@ -63,21 +65,24 @@ function equal (){
 }
 
 
+function addPressed(){
+    whatToDo.push("+");
+    h1.textContent ="+";
+    operatorDisplay.append(h1);
+    buttons.forEach(x=>x.removeEventListener("click",fun));
+    buttons.forEach(x=>x.addEventListener("click",fun2));
+}
+
 const buttons = Array.from(document.querySelectorAll(".nB"));
 buttons.forEach(x=>x.addEventListener("click",fun));
 
 const   addBtn = document.querySelector(".addBtn");
-addBtn.addEventListener("click",add);
+addBtn.addEventListener("click",addPressed);
 
 const equalBtn = document.querySelector(".equal");
 equalBtn.addEventListener("click",equal);
 
-function add (){
-    const plus = document.createElement("h1");
-    plus.textContent ="+";
-    display2.appendChild(plus);
-    buttons.forEach(x=>x.removeEventListener("click",fun));
-    buttons.forEach(x=>x.addEventListener("click",fun2));
-    }
+const operatorDisplay = document.querySelector("#display2");
 
+const h1 = document.createElement("h1");
 
