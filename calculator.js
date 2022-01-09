@@ -32,8 +32,16 @@ function showNumbers (){
 }
 
 
+function showNumbers2 (){
+    if(display3.firstChild){display3.removeChild(display3.childNodes[0]);}
+    const toShow = document.createElement("h1");
+    toShow.textContent = numberB.join("");
+    display3.appendChild(toShow);
+}
 
 
+
+var numberB = [];
 
 var numberA = [];
 
@@ -42,15 +50,34 @@ function fun (){
     showNumbers();
 }
 
+function fun2 (){
+    numberB.push(this.textContent);
+    showNumbers2();
+}
+
+function equal (){
+    console.log(
+        parseFloat(numberA.join(""))+parseFloat(numberB.join(""))
+    );
+
+}
+
+
 const buttons = Array.from(document.querySelectorAll(".nB"));
 buttons.forEach(x=>x.addEventListener("click",fun));
 
 const   addBtn = document.querySelector(".addBtn");
 addBtn.addEventListener("click",add);
 
+const equalBtn = document.querySelector(".equal");
+equalBtn.addEventListener("click",equal);
+
 function add (){
     const plus = document.createElement("h1");
     plus.textContent ="+";
     display2.appendChild(plus);
-       // return a+b;
+    buttons.forEach(x=>x.removeEventListener("click",fun));
+    buttons.forEach(x=>x.addEventListener("click",fun2));
     }
+
+

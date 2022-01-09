@@ -9,11 +9,12 @@
 #display{
     height: 150px;
     width: 350px;
+    
     margin-top: 20px;
     background-color:yellowgreen;
     display:grid;
     grid-template-rows: 1fr 1fr 1fr;
-    gap:1px;
+    
     
 }
 
@@ -21,7 +22,11 @@
     background-color:lightcyan;
 }
 
-
+.dG > h1{
+    color:red;
+    font-size:20px;
+    
+}
 
 #numberButtons{
     
@@ -41,7 +46,8 @@
 .addBtn,
 .subtractBtn,
 .multiplyBtn,
-.divideBtn{
+.divideBtn,
+.equal{
 background-color:blue;
 display:flex;
 justify-content: center;
@@ -53,7 +59,8 @@ align-items: center;
 .addBtn:hover,
 .subtractBtn:hover,
 .multiplyBtn:hover,
-.divideBtn:hover{
+.divideBtn:hover,
+.equal:hover{
     transform: scale(1.2);
     background-color:greenyellow;
 }
