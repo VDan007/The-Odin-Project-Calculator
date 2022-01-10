@@ -103,6 +103,12 @@ function addPressed(){
     buttons.forEach(x=>x.addEventListener("click",fun2));
     addBtn.removeEventListener("click",addPressed);
     addBtn.addEventListener("click",addPressedAgain);
+    subtractBtn.removeEventListener("click",subtractPressed);
+    subtractBtn.addEventListener("click",subtractPressedAgain);
+    multiplyBtn.removeEventListener("click",multiplyPressed);
+    multiplyBtn.addEventListener("click",multiplyPressedAgain);
+    divideBtn.removeEventListener("click",dividePressed);
+    divideBtn.addEventListener("click",dividePressedAgain);
 
 }
 
@@ -122,8 +128,14 @@ function subtractPressed(){
     display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+    addBtn.removeEventListener("click",addPressed);
+    addBtn.addEventListener("click",addPressedAgain);
     subtractBtn.removeEventListener("click",subtractPressed);
     subtractBtn.addEventListener("click",subtractPressedAgain);
+    multiplyBtn.removeEventListener("click",multiplyPressed);
+    multiplyBtn.addEventListener("click",multiplyPressedAgain);
+    divideBtn.removeEventListener("click",dividePressed);
+    divideBtn.addEventListener("click",dividePressedAgain);
 }
 
 function subtractPressedAgain(){
@@ -144,7 +156,26 @@ function multiplyPressed(){
     display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+    addBtn.removeEventListener("click",addPressed);
+    addBtn.addEventListener("click",addPressedAgain);
+    subtractBtn.removeEventListener("click",subtractPressed);
+    subtractBtn.addEventListener("click",subtractPressedAgain);
+    multiplyBtn.removeEventListener("click",multiplyPressed);
+    multiplyBtn.addEventListener("click",multiplyPressedAgain);
+    divideBtn.removeEventListener("click",dividePressed);
+    divideBtn.addEventListener("click",dividePressedAgain);
 }
+
+function multiplyPressedAgain(){
+    whatToDo =["*"];
+   if(numberB.length !==0){operate();}
+   
+    h2.textContent = "*";
+    display2.append(h2);
+    numberB = [];
+    
+}
+
 
 function dividePressed(){
     whatToDo.push("/");
@@ -152,6 +183,24 @@ function dividePressed(){
     display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+    addBtn.removeEventListener("click",addPressed);
+    addBtn.addEventListener("click",addPressedAgain);
+    subtractBtn.removeEventListener("click",subtractPressed);
+    subtractBtn.addEventListener("click",subtractPressedAgain);
+    multiplyBtn.removeEventListener("click",multiplyPressed);
+    multiplyBtn.addEventListener("click",multiplyPressedAgain);
+    divideBtn.removeEventListener("click",dividePressed);
+    divideBtn.addEventListener("click",dividePressedAgain);
+}
+
+function dividePressedAgain(){
+    whatToDo =["/"];
+   if(numberB.length !==0){operate();}
+   
+    h2.textContent = "/";
+    display2.append(h2);
+    numberB = [];
+    
 }
 
 
@@ -190,6 +239,11 @@ equalBtn.addEventListener("click",operate);
 
 const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click",reload);
+
+const operators = Array.from(document.querySelectorAll(".operator"));
+operators.forEach(
+    x=>x.addEventListener
+);
 
 const h1 = document.createElement("h1");
 const h2 = document.createElement("h1");
