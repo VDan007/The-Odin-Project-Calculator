@@ -116,9 +116,9 @@ function addPressed(){
 }
 
 function addPressedAgain(){
-    whatToDo =["+"];
+    
    if(numberB.length !==0){operate();}
-   
+   whatToDo =["+"];
     h2.textContent = "+";
     display2.append(h2);
     numberB = [];
@@ -142,9 +142,9 @@ function subtractPressed(){
 }
 
 function subtractPressedAgain(){
-    whatToDo =["-"];
+    
    if(numberB.length !==0){operate();}
-   
+   whatToDo =["-"];
     h2.textContent = "-";
     display2.append(h2);
     numberB = [];
@@ -170,9 +170,9 @@ function multiplyPressed(){
 }
 
 function multiplyPressedAgain(){
-    whatToDo =["*"];
+    
    if(numberB.length !==0){operate();}
-   
+   whatToDo =["*"];
     h2.textContent = "*";
     display2.append(h2);
     numberB = [];
@@ -197,9 +197,9 @@ function dividePressed(){
 }
 
 function dividePressedAgain(){
-    whatToDo =["/"];
+    
    if(numberB.length !==0){operate();}
-   
+   whatToDo =["/"];
     h2.textContent = "/";
     display2.append(h2);
     numberB = [];
