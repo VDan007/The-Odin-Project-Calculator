@@ -4,6 +4,7 @@ function add (a,b){
       h1.textContent =  parseFloat(a.join("")) + parseFloat(b.join(""));
     display1.append(h1);
     numberA = [];
+    numberB = [];
     numberA.push(parseFloat(a.join("")) + parseFloat(b.join("")));
 
     }
@@ -98,7 +99,8 @@ function addPressed(){
 
 function addPressedAgain(){
     whatToDo =["+"];
-    operate();
+   if(numberB.length !==0){operate();}
+   
     h2.textContent = "+";
     display2.append(h2);
     numberB = [];
@@ -139,9 +141,6 @@ toVipe.forEach(function(x){
     }
 });
 
-//display1.removeChild(display1.childNodes[0]);
-//display2.removeChild(display2.childNodes[0]);
-//display3.removeChild(display3.childNodes[0]);
 }
 
 function reload(){
