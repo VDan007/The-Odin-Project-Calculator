@@ -3,6 +3,8 @@ function add (a,b){
         vipe();
       h1.textContent =  parseFloat(a.join("")) + parseFloat(b.join(""));
     display1.append(h1);
+    numberA = [];
+    numberA.push(parseFloat(a.join("")) + parseFloat(b.join("")));
 
     }
 
@@ -25,6 +27,7 @@ function divide(a,b){
 }
 
 function operate (){
+    console.log(whatToDo);
     if(whatToDo =="+"){
         add(numberA,numberB);
     }
@@ -84,8 +87,8 @@ function con(){console.log("works");}
 
 function addPressed(){
     whatToDo.push("+");
-    h1.textContent ="+";
-    display2.append(h1);
+    h2.textContent ="+";
+    display2.append(h2);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
     addBtn.removeEventListener("click",addPressed);
@@ -94,9 +97,12 @@ function addPressed(){
 }
 
 function addPressedAgain(){
-operate();
-whatToDo = ["+"];
-numberB = [];
+    whatToDo =["+"];
+    operate();
+    h2.textContent = "+";
+    display2.append(h2);
+    numberB = [];
+    
 }
 
 function subtractPressed(){
@@ -126,9 +132,16 @@ function dividePressed(){
 
 
 function vipe(){
-    display1.removeChild(display1.childNodes[0]);
-    display2.removeChild(display2.childNodes[0]);
-    display3.removeChild(display3.childNodes[0]);
+const toVipe = Array.from(document.querySelectorAll(".dG"));
+toVipe.forEach(function(x){
+    if(x.childNodes[0]!==undefined){
+        x.removeChild(x.childNodes[0]);
+    }
+});
+
+//display1.removeChild(display1.childNodes[0]);
+//display2.removeChild(display2.childNodes[0]);
+//display3.removeChild(display3.childNodes[0]);
 }
 
 function reload(){
@@ -157,4 +170,5 @@ const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click",reload);
 
 const h1 = document.createElement("h1");
+const h2 = document.createElement("h1");
 
