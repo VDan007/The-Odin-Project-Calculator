@@ -95,6 +95,7 @@ function addPressed(){
 
 function addPressedAgain(){
 operate();
+whatToDo = ["+"];
 numberB = [];
 }
 
