@@ -13,18 +13,27 @@ function subtract (a,b){
     vipe();
       h1.textContent =  parseFloat(a.join("")) - parseFloat(b.join(""));
     display1.append(h1);
+    numberA = [];
+    numberB = [];
+    numberA.push(parseFloat(a.join("")) - parseFloat(b.join("")));
 }
 
 function multiply (a,b){
     vipe();
       h1.textContent =  parseFloat(a.join("")) * parseFloat(b.join(""));
     display1.append(h1);
+    numberA = [];
+    numberB = [];
+    numberA.push(parseFloat(a.join("")) * parseFloat(b.join("")));
 }
 
 function divide(a,b){
     vipe();
       h1.textContent =  parseFloat(a.join("")) / parseFloat(b.join(""));
     display1.append(h1);
+    numberA = [];
+    numberB = [];
+    numberA.push(parseFloat(a.join("")) / parseFloat(b.join("")));
 }
 
 function operate (){
@@ -113,7 +122,21 @@ function subtractPressed(){
     display2.append(h1);
     buttons.forEach(x=>x.removeEventListener("click",fun));
     buttons.forEach(x=>x.addEventListener("click",fun2));
+    subtractBtn.removeEventListener("click",subtractPressed);
+    subtractBtn.addEventListener("click",subtractPressedAgain);
 }
+
+function subtractPressedAgain(){
+    whatToDo =["-"];
+   if(numberB.length !==0){operate();}
+   
+    h2.textContent = "-";
+    display2.append(h2);
+    numberB = [];
+    
+}
+
+
 
 function multiplyPressed(){
     whatToDo.push("*");
