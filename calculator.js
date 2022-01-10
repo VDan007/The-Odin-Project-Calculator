@@ -37,7 +37,8 @@ function divide(a,b){
 }
 
 function operate (){
-    console.log(whatToDo);
+    if(numberB.length !== 0){ 
+    
     if(whatToDo =="+"){
         add(numberA,numberB);
     }
@@ -51,6 +52,8 @@ function operate (){
         divide(numberA,numberB);
     }
 }
+}
+
 
 ////////////
 
